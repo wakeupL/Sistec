@@ -16,59 +16,52 @@
             <span class="navbar-toggler-bar navbar-kebab"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <form>
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <i class="now-ui-icons ui-1_zoom-bold"></i>
-                  </div>
-                </div>
-              </div>
-            </form>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="now-ui-icons media-2_sound-wave"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Stats</span>
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="now-ui-icons location_world"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Some Actions</span>
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuAccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="now-ui-icons users_single-02"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Cuenta</span>
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuAccount">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="{{ route('logout') }}"
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#Mantenedores" id="navMantenedor" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="now-ui-icons design_bullet-list-67"></i>
+                        <p>
+                            <span class="d-lg-none d-md-block">Mantenedores</span>
+                        </p>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navMantenedor">
+                        <a class="dropdown-item" href="users.php">Usuarios</a>
+                        <a class="dropdown-item" href="countries.php">Países</a>
+                        <a class="dropdown-item" href="states.php">Regiones</a>
+                        <a class="dropdown-item" href="distrits.php">Comunas</a>
+                        <a class="dropdown-item" href="zones.php">Zonas</a>
+                        <a class="dropdown-item" href="companies.php">Empresas</a>
+                        <a class="dropdown-item" href="departaments.php">Departamentos</a>
+                        <a class="dropdown-item" href="#">Tipo de contratos</a>
+                        <a class="dropdown-item" href="#">Categorías de Tickets</a>
+                        <a class="dropdown-item" href="#">Orígen del Ticket</a>
+                        <a class="dropdown-item" href="#">Prioridades de atención</a>
+                        <a class="dropdown-item" href="#">Estados del Ticket</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="now-ui-icons users_single-02"></i>
+                        <p>
+                            <span class="d-lg-none d-md-block">Cuenta</span>
+                        </p>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarUser">
+                        <a class="dropdown-item" href="profile.php">Perfil</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
                                                   onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Cerrar sesión') }}
                   </a>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                   </form>
-                </div>
-              </li>
+                    </div>
+                </li>
+
             </ul>
           </div>
         </div>

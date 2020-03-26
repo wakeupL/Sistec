@@ -20,9 +20,12 @@ Route::get('/', function ()
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
-Route::get('/dashboard', function()
-{
+Route::get('/maintainer/users', function(){
+	return view('maintainer.users.index');
+});
+
+route::get('/maintainer', function(){
 	return view('dashboard');
 });

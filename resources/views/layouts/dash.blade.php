@@ -32,6 +32,11 @@
   <!-- CSS Files -->
   <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
   <link href="{{ asset('assets/css/now-ui-dashboard.css?v=1.5.0') }}" rel="stylesheet" />
+  <style type="text/css">
+    .background {
+      background: linear-gradient(#FFBF00, #FF8000);
+    }
+  </style>
 
 </head>
 
