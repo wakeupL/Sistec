@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Menú</div>
                 <div class="card-body">
-                    
+                    @include('includes.menu')
                 </div>
             </div>
         </div>
