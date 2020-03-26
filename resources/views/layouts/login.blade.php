@@ -44,7 +44,11 @@
 		@endauth
 	@endif
 <footer>
-	<p>Desarrollado por Angel Oyarzun &copy; 2019</p>
+	<div class="copyright" id="copyright">
+            Desarrollado por Angel Oyarzún &copy; <script>
+              document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+            </script>
+    </div>
 </footer>
 </body>
 </html>

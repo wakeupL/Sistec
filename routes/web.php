@@ -29,3 +29,5 @@ Route::get('/maintainer/users', function(){
 route::get('/maintainer', function(){
 	return view('dashboard');
 });
+
+Route::resource('users', 'UsersController');
