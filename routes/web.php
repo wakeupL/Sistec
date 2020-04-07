@@ -22,12 +22,25 @@ Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
-Route::get('/maintainer/users', function(){
-	return view('maintainer.users.index');
+Route::get('/admin/users', function(){
+	return view('admin.users.index');
 });
 
-route::get('/maintainer', function(){
+Route::get('/admin', function(){
 	return view('dashboard');
 });
 
-Route::resource('users', 'UsersController');
+Route::group(['prefix' => 'admin'], function(){
+
+	Route::resource('users', 'UsersController');
+	Route::get('users/{id}/destroy', [
+		'uses'	=> 'UsersController@destroy',
+		'as'	=> 'admin.users.destroy'
+	]);
+	Route::get('users/{id]/password', [
+		'uses'	=> 'UsersController@password',
+		'as'	=> 'admin.users.password'
+	]);
+
+});
+

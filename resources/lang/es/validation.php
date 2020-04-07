@@ -13,16 +13,16 @@ return [
     |
     */
 
-    'accepted'             => 'El campo :attribute debe ser aceptado.',
-    'active_url'           => 'El campo :attribute no es una URL válida.',
-    'after'                => 'El campo :attribute debe ser una fecha posterior a :date.',
-    'after_or_equal'       => 'El campo :attribute debe ser una fecha posterior o igual a :date.',
-    'alpha'                => 'El campo :attribute solo puede contener letras.',
-    'alpha_dash'           => 'El campo :attribute solo puede contener letras, números, guiones y guiones bajos.',
-    'alpha_num'            => 'El campo :attribute solo puede contener letras y números.',
-    'array'                => 'El campo :attribute debe ser un array.',
-    'before'               => 'El campo :attribute debe ser una fecha anterior a :date.',
-    'before_or_equal'      => 'El campo :attribute debe ser una fecha anterior o igual a :date.',
+    'accepted'             => 'El :attribute debe ser aceptado.',
+    'active_url'           => 'El :attribute no es una URL válida.',
+    'after'                => 'El :attribute debe ser una fecha posterior a :date.',
+    'after_or_equal'       => 'El :attribute debe ser una fecha posterior o igual a :date.',
+    'alpha'                => 'El :attribute solo puede contener letras.',
+    'alpha_dash'           => 'El :attribute solo puede contener letras, números, guiones y guiones bajos.',
+    'alpha_num'            => 'El :attribute solo puede contener letras y números.',
+    'array'                => 'El :attribute debe ser un array.',
+    'before'               => 'El :attribute debe ser una fecha anterior a :date.',
+    'before_or_equal'      => 'El :attribute debe ser una fecha anterior o igual a :date.',
     'between'              => [
         'numeric' => 'El campo :attribute debe ser un valor entre :min y :max.',
         'file'    => 'El archivo :attribute debe pesar entre :min y :max kilobytes.',
@@ -130,8 +130,25 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'name' => [
+            'required'  => 'El Nombre es obligatorio.',
+            'min:5'     => 'El Nombre debe contener más de 5 caracteres.',
+            'max:50'    => 'El Nombre debe contener menos de 50 caracteres.'
+        ],
+        'password' => [
+            'min:8'     => 'La contraseña debe contener al menos 8 caracteres.',
+            'max:50'    => 'La contraseña debe contener menos de 50 caracteres.',
+            'required'  => 'La contraseña es obligatoria.'
+        ],
+        'email' => [
+            'unique:users'  => 'El Correo Electrónico ingresado ya se encuentra en uso.',
+            'required'      => 'El Correo Electrónico es obligatorio.'
+        ],
+        'rut' => [
+            'required'  => 'El RUT es obligatorio.'
+        ],
+        'status' => [
+            'required'  => 'El Tipo de Usuario es obligatorio.'
         ],
     ],
 
@@ -146,6 +163,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => 'Nombre',
+        'password'  => 'contraseña',
+        'email'     => 'correo electrónico',
+        'status'    => 'tipo de usuario',
+        'rut'       => 'RUT',
+    ],
 
 ];

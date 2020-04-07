@@ -2,11 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Users;
 use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
+use Laracasts\Flash\Flash;
+use App\Http\Requests\UserRequest;
 
 class UsersController extends Controller
 {
+        /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,10 +28,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = Users::latest()->paginate(5);
-
-        return view('maintainer.users', compact(users))
-                ->with('i', (request()->input('page', 1) -1) *5);
+        $users = DB::table('users')->get();
+        return view('admin.users.index', ['users' => $users]);
     }
 
     /**
@@ -27,7 +39,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('maintainer.users.create');
+        $roles = DB::table('roles')->get();
+        return view('admin.users.create', ['roles' => $roles]);
     }
 
     /**
@@ -36,73 +49,112 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'rut' => 'required'
-        ]);
 
-        Users::create($request->all());
 
-        return redirect()->route('maintainer.users')
-                            ->with('success', 'Usuario creado con éxito');
+
+        $user = new User($request->all());
+        
+        $user->password = password_hash($user->password, PASSWORD_DEFAULT);
+        $user->save();
+        Flash::primary('Se ha creado un usuario nuevo');
+        return redirect()->route('users.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Users  $users
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Users $users)
+    public function show($id)
     {
-        return view('maintainer.users.show', compact('users'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Users  $users
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Users $users)
+    public function edit($id)
     {
-        return view('maintainer.users.edit', compact('users'));
+        $user = User::find($id);
+        $roles = DB::table('roles')->get();
+        return view('admin.users.edit', ['roles' => $roles])->with('user', $user);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Users  $users
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Users $users)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'rut' => 'required'
-        ]);
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->rut = $request->rut;
+        $user->status = $request->status;
 
-        $users->update($request->all());
+        $user->save();
+        Flash::primary('Se ha editado exitosamente.');
+        return redirect()->route('users.index');
+    }
 
-        return redirect()->route('maintainer.users')
-                            ->with('success', 'Usuario actualizado con éxito');
+     /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function password(Request $request)
+    {
+        $id       = $request->id;
+        $password = $request->newPassword;
+        $confirm  = $request->confirmPassword;
+
+        if($password != $confirm){
+
+            Flash::primary('Las contraseñas no coinciden');
+            return redirect()->route('users.index');
+
+        }elseif($password == $confirm){
+
+            $user = User::find($id);
+
+            $newPassword = password_hash($password, PASSWORD_DEFAULT);
+
+            $user->password = $newPassword;
+            $user->save();
+
+            FLash::primary('Se ha cambiado exitosamente la contraseña de '.$user->name);
+            return redirect()->route('users.index');
+        }
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Users  $users
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Users $users)
+    public function destroy($id)
     {
-        $users->delete();
-        return redirect()->route('maintainer.users',)
-                            ->with('success', 'Usuario eliminado con éxito');
+        $user = User::find($id);
+
+        $disable = '0';
+
+        $user->status = $disable;
+        $user->save();
+
+        Flash::primary('El usuario ha sido desactivado correctamente.');
+        return redirect()->route('users.index');
     }
 }

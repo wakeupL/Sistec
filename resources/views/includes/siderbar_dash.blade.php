@@ -7,7 +7,7 @@
         <ul class="nav">
           
           <li>
-    <a href="index.php">
+    <a href="{{ url('/dashboard') }}">
         <i class="now-ui-icons design_app"></i>
         <p>Inicio</p>
     </a>

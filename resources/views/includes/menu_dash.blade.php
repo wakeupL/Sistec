@@ -27,7 +27,7 @@
                         </p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navMantenedor">
-                        <a class="dropdown-item" href="{{ url('maintainer/users') }}">Usuarios</a>
+                        <a class="dropdown-item" href="{{ url('admin/users') }}">Usuarios</a>
                         <a class="dropdown-item" href="countries.php">Países</a>
                         <a class="dropdown-item" href="states.php">Regiones</a>
                         <a class="dropdown-item" href="distrits.php">Comunas</a>

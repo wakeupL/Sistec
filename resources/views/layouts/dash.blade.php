@@ -37,6 +37,7 @@
       background: linear-gradient(#FFBF00, #FF8000);
     }
   </style>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
 
 </head>
 
@@ -53,6 +54,8 @@
       <div class="panel-header panel-header-sm"></div>
 
       <div class="content">
+      @include('flash::message')
+      
       @yield('content')
       </div>
 
@@ -67,6 +70,12 @@
   <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
   <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
   <script src="{{ asset('assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+  <script>
+  $(document).ready( function () {
+    $('#usersTable').DataTable();
+} );
+</script>
 
 </body>
 
