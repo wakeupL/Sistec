@@ -41,6 +41,7 @@ Route::group(['prefix' => 'admin'], function(){
 		'uses'	=> 'UsersController@password',
 		'as'	=> 'admin.users.password'
 	]);
+	Route::resource('countries', 'CountriesController');
 
 });
 
