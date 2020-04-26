@@ -10,7 +10,7 @@
 			<div class="col-md-6 text-right">
 				<a href="{{ route('statuses.index') }}" class="btn btn-primary">
 					<span class="now-ui-icons arrows-1_minimal-left"></span>
-					&nbsp;&nbsp; Volver
+					&nbsp;&nbsp;  Volver
 				</a>
 			</div>
 		</div>
