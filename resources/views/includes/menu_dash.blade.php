@@ -28,17 +28,17 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navMantenedor">
                         <a class="dropdown-item" href="{{ url('admin/users') }}">Usuarios</a>
-                        <a class="dropdown-item" href="countries.php">Países</a>
-                        <a class="dropdown-item" href="states.php">Regiones</a>
-                        <a class="dropdown-item" href="distrits.php">Comunas</a>
-                        <a class="dropdown-item" href="zones.php">Zonas</a>
-                        <a class="dropdown-item" href="companies.php">Empresas</a>
-                        <a class="dropdown-item" href="departaments.php">Departamentos</a>
+                        <a class="dropdown-item" href="{{ url('admin/countries') }}">Países</a>
+                        <a class="dropdown-item" href="{{ url('admin/states') }}">Regiones</a>
+                        <a class="dropdown-item" href="{{ url('admin/distrits') }}">Comunas</a>
+                        <a class="dropdown-item" href="{{ url('admin/zones') }}">Zonas</a>
+                        <a class="dropdown-item" href="{{ url('admin/companies') }}">Empresas</a>
+                        <a class="dropdown-item" href="{{ url('admin/departments') }}">Departamentos</a>
                         <a class="dropdown-item" href="#">Tipo de contratos</a>
                         <a class="dropdown-item" href="#">Categorías de Tickets</a>
                         <a class="dropdown-item" href="#">Orígen del Ticket</a>
                         <a class="dropdown-item" href="#">Prioridades de atención</a>
-                        <a class="dropdown-item" href="#">Estados del Ticket</a>
+                        <a class="dropdown-item" href="{{ url('admin/statuses') }}">Estados del Ticket</a>
                     </div>
                 </li>
 

@@ -131,9 +131,9 @@ return [
 
     'custom' => [
         'name' => [
-            'required'  => 'El Nombre es obligatorio.',
-            'min:5'     => 'El Nombre debe contener más de 5 caracteres.',
-            'max:50'    => 'El Nombre debe contener menos de 50 caracteres.'
+            'required'  => 'El nombre es obligatorio.',
+            'min:5'     => 'El nombre debe contener más de 5 caracteres.',
+            'max:50'    => 'El nombre debe contener menos de 50 caracteres.'
         ],
         'password' => [
             'min:8'     => 'La contraseña debe contener al menos 8 caracteres.',
@@ -150,6 +150,9 @@ return [
         'status' => [
             'required'  => 'El Tipo de Usuario es obligatorio.'
         ],
+        'pais' => [
+            'unique'    => 'El país ya se encuentra registrado.'
+        ],
     ],
 
     /*
@@ -164,10 +167,10 @@ return [
     */
 
     'attributes' => [
-        'name' => 'Nombre',
-        'password'  => 'contraseña',
-        'email'     => 'correo electrónico',
-        'status'    => 'tipo de usuario',
+        'name'      => 'Nombre',
+        'password'  => 'Contraseña',
+        'email'     => 'Correo Electrónico',
+        'status'    => 'Tipo de usuario',
         'rut'       => 'RUT',
     ],
 

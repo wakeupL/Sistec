@@ -116,11 +116,6 @@ class ComposerStaticInitbad02910fc693103a688335002ef627e
             'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
         ),
-        'J' => 
-        array (
-            'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
-            'JakubOnderka\\PhpConsoleColor\\' => 29,
-        ),
         'I' => 
         array (
             'Illuminate\\Foundation\\Auth\\' => 27,
@@ -364,14 +359,6 @@ class ComposerStaticInitbad02910fc693103a688335002ef627e
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
-        'JakubOnderka\\PhpConsoleHighlighter\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
-        ),
-        'JakubOnderka\\PhpConsoleColor\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
-        ),
         'Illuminate\\Foundation\\Auth\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/ui/auth-backend',
@@ -492,6 +479,7 @@ class ComposerStaticInitbad02910fc693103a688335002ef627e
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Country' => __DIR__ . '/../..' . '/app/Country.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -500,6 +488,7 @@ class ComposerStaticInitbad02910fc693103a688335002ef627e
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\CountriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/CountriesController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsersController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -510,6 +499,7 @@ class ComposerStaticInitbad02910fc693103a688335002ef627e
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\CountryRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CountryRequest.php',
         'App\\Http\\Requests\\UserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserRequest.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -1361,6 +1351,7 @@ class ComposerStaticInitbad02910fc693103a688335002ef627e
         'GuzzleHttp\\RetryMiddleware' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/RetryMiddleware.php',
         'GuzzleHttp\\TransferStats' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/TransferStats.php',
         'GuzzleHttp\\UriTemplate' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/UriTemplate.php',
+        'GuzzleHttp\\Utils' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Utils.php',
         'Hamcrest\\Arrays\\IsArray' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
         'Hamcrest\\Arrays\\IsArrayContaining' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
         'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',
@@ -2306,9 +2297,6 @@ class ComposerStaticInitbad02910fc693103a688335002ef627e
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
-        'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/ConsoleColor.php',
-        'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
-        'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Laracasts\\Flash\\Flash' => __DIR__ . '/..' . '/laracasts/flash/src/Laracasts/Flash/Flash.php',
         'Laracasts\\Flash\\FlashNotifier' => __DIR__ . '/..' . '/laracasts/flash/src/Laracasts/Flash/FlashNotifier.php',
@@ -2391,6 +2379,8 @@ class ComposerStaticInitbad02910fc693103a688335002ef627e
         'League\\CommonMark\\EnvironmentInterface' => __DIR__ . '/..' . '/league/commonmark/src/EnvironmentInterface.php',
         'League\\CommonMark\\Event\\AbstractEvent' => __DIR__ . '/..' . '/league/commonmark/src/Event/AbstractEvent.php',
         'League\\CommonMark\\Event\\DocumentParsedEvent' => __DIR__ . '/..' . '/league/commonmark/src/Event/DocumentParsedEvent.php',
+        'League\\CommonMark\\Event\\DocumentPreParsedEvent' => __DIR__ . '/..' . '/league/commonmark/src/Event/DocumentPreParsedEvent.php',
+        'League\\CommonMark\\Exception\\InvalidOptionException' => __DIR__ . '/..' . '/league/commonmark/src/Exception/InvalidOptionException.php',
         'League\\CommonMark\\Exception\\UnexpectedEncodingException' => __DIR__ . '/..' . '/league/commonmark/src/Exception/UnexpectedEncodingException.php',
         'League\\CommonMark\\Extension\\Autolink\\AutolinkExtension' => __DIR__ . '/..' . '/league/commonmark/src/Extension/Autolink/AutolinkExtension.php',
         'League\\CommonMark\\Extension\\Autolink\\EmailAutolinkProcessor' => __DIR__ . '/..' . '/league/commonmark/src/Extension/Autolink/EmailAutolinkProcessor.php',
@@ -2404,6 +2394,12 @@ class ComposerStaticInitbad02910fc693103a688335002ef627e
         'League\\CommonMark\\Extension\\ExternalLink\\ExternalLinkExtension' => __DIR__ . '/..' . '/league/commonmark/src/Extension/ExternalLink/ExternalLinkExtension.php',
         'League\\CommonMark\\Extension\\ExternalLink\\ExternalLinkProcessor' => __DIR__ . '/..' . '/league/commonmark/src/Extension/ExternalLink/ExternalLinkProcessor.php',
         'League\\CommonMark\\Extension\\GithubFlavoredMarkdownExtension' => __DIR__ . '/..' . '/league/commonmark/src/Extension/GithubFlavoredMarkdownExtension.php',
+        'League\\CommonMark\\Extension\\HeadingPermalink\\HeadingPermalink' => __DIR__ . '/..' . '/league/commonmark/src/Extension/HeadingPermalink/HeadingPermalink.php',
+        'League\\CommonMark\\Extension\\HeadingPermalink\\HeadingPermalinkExtension' => __DIR__ . '/..' . '/league/commonmark/src/Extension/HeadingPermalink/HeadingPermalinkExtension.php',
+        'League\\CommonMark\\Extension\\HeadingPermalink\\HeadingPermalinkProcessor' => __DIR__ . '/..' . '/league/commonmark/src/Extension/HeadingPermalink/HeadingPermalinkProcessor.php',
+        'League\\CommonMark\\Extension\\HeadingPermalink\\HeadingPermalinkRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Extension/HeadingPermalink/HeadingPermalinkRenderer.php',
+        'League\\CommonMark\\Extension\\HeadingPermalink\\Slug\\DefaultSlugGenerator' => __DIR__ . '/..' . '/league/commonmark/src/Extension/HeadingPermalink/Slug/DefaultSlugGenerator.php',
+        'League\\CommonMark\\Extension\\HeadingPermalink\\Slug\\SlugGeneratorInterface' => __DIR__ . '/..' . '/league/commonmark/src/Extension/HeadingPermalink/Slug/SlugGeneratorInterface.php',
         'League\\CommonMark\\Extension\\InlinesOnly\\ChildRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Extension/InlinesOnly/ChildRenderer.php',
         'League\\CommonMark\\Extension\\InlinesOnly\\InlinesOnlyExtension' => __DIR__ . '/..' . '/league/commonmark/src/Extension/InlinesOnly/InlinesOnlyExtension.php',
         'League\\CommonMark\\Extension\\SmartPunct\\PunctuationParser' => __DIR__ . '/..' . '/league/commonmark/src/Extension/SmartPunct/PunctuationParser.php',
@@ -2416,6 +2412,13 @@ class ComposerStaticInitbad02910fc693103a688335002ef627e
         'League\\CommonMark\\Extension\\Strikethrough\\StrikethroughDelimiterProcessor' => __DIR__ . '/..' . '/league/commonmark/src/Extension/Strikethrough/StrikethroughDelimiterProcessor.php',
         'League\\CommonMark\\Extension\\Strikethrough\\StrikethroughExtension' => __DIR__ . '/..' . '/league/commonmark/src/Extension/Strikethrough/StrikethroughExtension.php',
         'League\\CommonMark\\Extension\\Strikethrough\\StrikethroughRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Extension/Strikethrough/StrikethroughRenderer.php',
+        'League\\CommonMark\\Extension\\TableOfContents\\Normalizer\\AsIsNormalizerStrategy' => __DIR__ . '/..' . '/league/commonmark/src/Extension/TableOfContents/Normalizer/AsIsNormalizerStrategy.php',
+        'League\\CommonMark\\Extension\\TableOfContents\\Normalizer\\FlatNormalizerStrategy' => __DIR__ . '/..' . '/league/commonmark/src/Extension/TableOfContents/Normalizer/FlatNormalizerStrategy.php',
+        'League\\CommonMark\\Extension\\TableOfContents\\Normalizer\\NormalizerStrategyInterface' => __DIR__ . '/..' . '/league/commonmark/src/Extension/TableOfContents/Normalizer/NormalizerStrategyInterface.php',
+        'League\\CommonMark\\Extension\\TableOfContents\\Normalizer\\RelativeNormalizerStrategy' => __DIR__ . '/..' . '/league/commonmark/src/Extension/TableOfContents/Normalizer/RelativeNormalizerStrategy.php',
+        'League\\CommonMark\\Extension\\TableOfContents\\TableOfContents' => __DIR__ . '/..' . '/league/commonmark/src/Extension/TableOfContents/TableOfContents.php',
+        'League\\CommonMark\\Extension\\TableOfContents\\TableOfContentsBuilder' => __DIR__ . '/..' . '/league/commonmark/src/Extension/TableOfContents/TableOfContentsBuilder.php',
+        'League\\CommonMark\\Extension\\TableOfContents\\TableOfContentsExtension' => __DIR__ . '/..' . '/league/commonmark/src/Extension/TableOfContents/TableOfContentsExtension.php',
         'League\\CommonMark\\Extension\\Table\\Table' => __DIR__ . '/..' . '/league/commonmark/src/Extension/Table/Table.php',
         'League\\CommonMark\\Extension\\Table\\TableCell' => __DIR__ . '/..' . '/league/commonmark/src/Extension/Table/TableCell.php',
         'League\\CommonMark\\Extension\\Table\\TableCellRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Extension/Table/TableCellRenderer.php',
@@ -2466,6 +2469,9 @@ class ComposerStaticInitbad02910fc693103a688335002ef627e
         'League\\CommonMark\\Inline\\Renderer\\NewlineRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Inline/Renderer/NewlineRenderer.php',
         'League\\CommonMark\\Inline\\Renderer\\StrongRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Inline/Renderer/StrongRenderer.php',
         'League\\CommonMark\\Inline\\Renderer\\TextRenderer' => __DIR__ . '/..' . '/league/commonmark/src/Inline/Renderer/TextRenderer.php',
+        'League\\CommonMark\\Input\\MarkdownInput' => __DIR__ . '/..' . '/league/commonmark/src/Input/MarkdownInput.php',
+        'League\\CommonMark\\Input\\MarkdownInputInterface' => __DIR__ . '/..' . '/league/commonmark/src/Input/MarkdownInputInterface.php',
+        'League\\CommonMark\\MarkdownConverterInterface' => __DIR__ . '/..' . '/league/commonmark/src/MarkdownConverterInterface.php',
         'League\\CommonMark\\Node\\Node' => __DIR__ . '/..' . '/league/commonmark/src/Node/Node.php',
         'League\\CommonMark\\Node\\NodeWalker' => __DIR__ . '/..' . '/league/commonmark/src/Node/NodeWalker.php',
         'League\\CommonMark\\Node\\NodeWalkerEvent' => __DIR__ . '/..' . '/league/commonmark/src/Node/NodeWalkerEvent.php',
@@ -3648,6 +3654,7 @@ class ComposerStaticInitbad02910fc693103a688335002ef627e
         'Psy\\Exception\\RuntimeException' => __DIR__ . '/..' . '/psy/psysh/src/Exception/RuntimeException.php',
         'Psy\\Exception\\ThrowUpException' => __DIR__ . '/..' . '/psy/psysh/src/Exception/ThrowUpException.php',
         'Psy\\Exception\\TypeErrorException' => __DIR__ . '/..' . '/psy/psysh/src/Exception/TypeErrorException.php',
+        'Psy\\Exception\\UnexpectedTargetException' => __DIR__ . '/..' . '/psy/psysh/src/Exception/UnexpectedTargetException.php',
         'Psy\\ExecutionClosure' => __DIR__ . '/..' . '/psy/psysh/src/ExecutionClosure.php',
         'Psy\\ExecutionLoopClosure' => __DIR__ . '/..' . '/psy/psysh/src/ExecutionLoopClosure.php',
         'Psy\\ExecutionLoop\\AbstractListener' => __DIR__ . '/..' . '/psy/psysh/src/ExecutionLoop/AbstractListener.php',
@@ -3677,6 +3684,7 @@ class ComposerStaticInitbad02910fc693103a688335002ef627e
         'Psy\\Reflection\\ReflectionConstant_' => __DIR__ . '/..' . '/psy/psysh/src/Reflection/ReflectionConstant_.php',
         'Psy\\Reflection\\ReflectionLanguageConstruct' => __DIR__ . '/..' . '/psy/psysh/src/Reflection/ReflectionLanguageConstruct.php',
         'Psy\\Reflection\\ReflectionLanguageConstructParameter' => __DIR__ . '/..' . '/psy/psysh/src/Reflection/ReflectionLanguageConstructParameter.php',
+        'Psy\\Reflection\\ReflectionNamespace' => __DIR__ . '/..' . '/psy/psysh/src/Reflection/ReflectionNamespace.php',
         'Psy\\Shell' => __DIR__ . '/..' . '/psy/psysh/src/Shell.php',
         'Psy\\Sudo' => __DIR__ . '/..' . '/psy/psysh/src/Sudo.php',
         'Psy\\Sudo\\SudoVisitor' => __DIR__ . '/..' . '/psy/psysh/src/Sudo/SudoVisitor.php',

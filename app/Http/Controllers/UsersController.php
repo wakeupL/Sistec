@@ -52,13 +52,25 @@ class UsersController extends Controller
     public function store(UserRequest $request)
     {
 
+        $request->validate([
+            'name' => 'required|min:5|max:30',
+            'password' => 'required',
+            'email' => 'unique:users,email|required|email',
+            'rut' => 'required',
+            'status' => 'required'
+        ]); 
 
+        $newUser = new User();
+        $newUser->name = $request->name;
+        $newUser->password = password_hash($request->password, PASSWORD_DEFAULT);
+        $newUser->email = $request->email;
+        $newUser->rut = $request->rut;
+        $newUser->status = $request->status;
 
-        $user = new User($request->all());
-        
-        $user->password = password_hash($user->password, PASSWORD_DEFAULT);
-        $user->save();
-        Flash::primary('Se ha creado un usuario nuevo');
+        $newUser->save();
+        //Mensaje a mostrar una vez guardado
+        Flash::primary('Se ha añadido un nuevo usuario');
+        //Redireccionamos a la vista
         return redirect()->route('users.index');
     }
 
@@ -83,7 +95,8 @@ class UsersController extends Controller
     {
         $user = User::find($id);
         $roles = DB::table('roles')->get();
-        return view('admin.users.edit', ['roles' => $roles])->with('user', $user);
+        return view('admin.users.edit', ['roles' => $roles])
+                                    ->with('user', $user);
     }
 
     /**

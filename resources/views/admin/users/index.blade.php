@@ -20,8 +20,8 @@
 				
 			</div>
 			<div class="card-body">
-				<table class="table table-hover table-bordered" id="usersTable" class="display">
-					<thead class="thead-dark">
+				<table class="table table-hover table-bordered" id="documentTable" class="display">
+					<thead class="thead-light">
 						<th>ID</th>
 						<th>Nombre</th>
 						<th>Correo electrónico</th>
