@@ -7,7 +7,6 @@
         ])
     @else
         <div class="alert
-                    alert-dismissible fade show
                     alert-{{ $message['level'] }}
                     {{ $message['important'] ? 'alert-important' : '' }}"
                     role="alert"
@@ -21,7 +20,6 @@
             @endif
 
             {!! $message['message'] !!}
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         </div>
     @endif
 @endforeach

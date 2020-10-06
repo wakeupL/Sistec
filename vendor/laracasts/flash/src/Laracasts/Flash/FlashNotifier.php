@@ -67,16 +67,6 @@ class FlashNotifier
     }
 
     /**
-    * Flas a primary message.
-    * @param string|null $message
-    * @return $this
-    */
-    public function primary($message = null)
-    {
-        return $this->message($message, 'primary');
-    }
-
-    /**
      * Flash a warning message.
      *
      * @param  string|null $message
